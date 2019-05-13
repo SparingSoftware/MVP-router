@@ -36,7 +36,7 @@ class ProfileListPresenter: IProfileListPresenter {
     //
     
     func profileClickedAt(pos: Int) {
-        // navigate(to: .Profile(profile: profileAt(pos: pos)))
+        router?.navigate(to: .Profile(user: profileAt(pos: pos)))
         view?.showProfile(profile: profileAt(pos: pos))
     }
 

@@ -10,21 +10,24 @@ import Foundation
 
 
 
+enum Destination {
+    case Login
+    case Main(user: User?)
+    case Profile(user: User?)
+    case About
+}
 
+//
 
 class Router: IRouter {
     
-    enum Destination {
-        
-    }
-    
     //
     
-    func navigate(to: Router.Destination) {
+    func navigate(to: Destination) {
         //
     }
     
-    func back(to: Router.Destination) {
+    func back(to: Destination) {
         //
     }
     
@@ -39,8 +42,8 @@ class Router: IRouter {
 
 protocol IRouter {
     
-    func navigate(to: Router.Destination)
-    func back(to: Router.Destination)
+    func navigate(to: Destination)
+    func back(to: Destination)
     func back()
     
 }

@@ -46,10 +46,12 @@ class MainPresenter: IMainPresenter {
     //
     
     func logoutClicked() {
+        router?.back(to: .Login)
         view?.backToLogin()
     }
     
     func aboutClicked() {
+        router?.navigate(to: .About)
         view?.showAbout()
     }
     

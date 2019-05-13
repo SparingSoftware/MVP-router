@@ -36,12 +36,12 @@ class AboutPresenter: IAboutPresenter {
     //
     
     func logoutClicked() {
-        // back(to: .Login())
+        router?.back(to: .Login)
         view?.backToLogin()
     }
     
     func exitClicked() {
-        // back()
+        router?.back()
         view?.close()
     }
     

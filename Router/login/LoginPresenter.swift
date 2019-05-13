@@ -16,6 +16,10 @@ class LoginPresenter: ILoginPresenter {
 
     //
     
+    let currentUser = User(name: "Piotr")
+    
+    //
+    
     init(
         view: ILoginView?,
         router: IRouter
@@ -37,12 +41,12 @@ class LoginPresenter: ILoginPresenter {
     //
     
     func loginClicked() {
-        // navigate(to: .Main(user: User(name: "Piotr")))
-        view?.showMainScreen(user: User(name: "Piotr"))
+        router?.navigate(to: .Main(user: currentUser))
+        view?.showMainScreen(user: currentUser)
     }
     
     func skipClicked() {
-        // navigate(to: .Main(user: nil))
+        router?.navigate(to: .Main(user: nil))
         view?.showMainScreen(user: nil)
     }
     
