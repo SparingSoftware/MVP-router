@@ -14,7 +14,7 @@ class AboutViewController: UIViewController {
     //
     
     lazy var presenter: IAboutPresenter = {
-       return AboutPresenter(view: self)
+       return AboutPresenter(view: self, router: Router())
     }()
     
     //

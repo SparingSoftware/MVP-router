@@ -11,13 +11,16 @@ import Foundation
 class AboutPresenter: IAboutPresenter {
     
     private weak var view: IAboutView?
+    private var router: IRouter?
     
     //
     
     init(
-        view: IAboutView?
+        view: IAboutView?,
+        router: IRouter
         ) {
         self.view = view
+        self.router = router
     }
     
     //
@@ -33,10 +36,12 @@ class AboutPresenter: IAboutPresenter {
     //
     
     func logoutClicked() {
+        // back(to: .Login())
         view?.backToLogin()
     }
     
     func exitClicked() {
+        // back()
         view?.close()
     }
     

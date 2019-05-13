@@ -17,7 +17,7 @@ class MainTabViewController: UITabBarController {
     //
     
     lazy var presenter: IMainPresenter =  {
-        return MainPresenter(view: self, user: loggedUser)
+        return MainPresenter(view: self, user: loggedUser, router: Router())
     }()
     
     //

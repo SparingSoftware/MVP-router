@@ -12,11 +12,16 @@ import Foundation
 class LoginPresenter: ILoginPresenter {
 
     private weak var view: ILoginView?
+    private var router: IRouter?
 
     //
     
-    init(view: ILoginView?) {
+    init(
+        view: ILoginView?,
+        router: IRouter
+    ) {
         self.view = view
+        self.router = router
     }
     
     //
@@ -32,10 +37,12 @@ class LoginPresenter: ILoginPresenter {
     //
     
     func loginClicked() {
+        // navigate(to: .Main(user: User(name: "Piotr")))
         view?.showMainScreen(user: User(name: "Piotr"))
     }
     
     func skipClicked() {
+        // navigate(to: .Main(user: nil))
         view?.showMainScreen(user: nil)
     }
     

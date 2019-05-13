@@ -13,15 +13,18 @@ class MainPresenter: IMainPresenter {
     
     private weak var view: IMainView?
     private var user: User?
+    private var router: IRouter?
     
     //
     
     init(
         view: IMainView?,
-        user: User?
+        user: User?,
+        router: IRouter
     ) {
         self.view = view
         self.user = user
+        self.router = router
     }
     
     //

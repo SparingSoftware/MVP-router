@@ -11,7 +11,7 @@ import UIKit
 class LoginViewController: UIViewController {
 
     private lazy var presenter: ILoginPresenter =  { [weak self] in
-        return LoginPresenter(view: self)
+        return LoginPresenter(view: self, router: Router())
     }()
     
     //

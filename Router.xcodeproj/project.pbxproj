@@ -24,6 +24,7 @@
 		857BC7582289999000A53717 /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 857BC7562289999000A53717 /* ProfileTableViewCell.xib */; };
 		857BC75A22899BD900A53717 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857BC75922899BD900A53717 /* ProfileViewController.swift */; };
 		857BC75C22899BE300A53717 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857BC75B22899BE300A53717 /* ProfilePresenter.swift */; };
+		857BC75F2289C0F200A53717 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857BC75E2289C0F200A53717 /* Router.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		857BC7562289999000A53717 /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTableViewCell.xib; sourceTree = "<group>"; };
 		857BC75922899BD900A53717 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		857BC75B22899BE300A53717 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
+		857BC75E2289C0F200A53717 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,8 +80,9 @@
 		857BC7292289840000A53717 /* Router */ = {
 			isa = PBXGroup;
 			children = (
-				857BC74C228994A600A53717 /* about */,
 				857BC74922898B7400A53717 /* model */,
+				857BC75D2289C0E700A53717 /* router */,
+				857BC74C228994A600A53717 /* about */,
 				857BC73F2289846E00A53717 /* profile */,
 				857BC73E2289846400A53717 /* list */,
 				857BC73D2289845F00A53717 /* main */,
@@ -146,6 +149,14 @@
 				857BC74F2289952B00A53717 /* AboutPresenter.swift */,
 			);
 			path = about;
+			sourceTree = "<group>";
+		};
+		857BC75D2289C0E700A53717 /* router */ = {
+			isa = PBXGroup;
+			children = (
+				857BC75E2289C0F200A53717 /* Router.swift */,
+			);
+			path = router;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +241,7 @@
 				857BC752228997BF00A53717 /* ProfileListViewController.swift in Sources */,
 				857BC754228997D900A53717 /* ProfileListPresenter.swift in Sources */,
 				857BC7422289850200A53717 /* LoginViewController.swift in Sources */,
+				857BC75F2289C0F200A53717 /* Router.swift in Sources */,
 				857BC72B2289840000A53717 /* AppDelegate.swift in Sources */,
 				857BC74622898A1700A53717 /* MainTabViewController.swift in Sources */,
 				857BC75C22899BE300A53717 /* ProfilePresenter.swift in Sources */,

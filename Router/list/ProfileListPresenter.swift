@@ -11,11 +11,16 @@ import Foundation
 class ProfileListPresenter: IProfileListPresenter {
     
     private weak var view: IProfileListView?
+    private var router: IRouter?
     
     //
     
-    init(view: IProfileListView?) {
+    init(
+        view: IProfileListView?,
+        router: IRouter
+    ) {
         self.view = view
+        self.router = router
     }
     
     //
@@ -31,6 +36,7 @@ class ProfileListPresenter: IProfileListPresenter {
     //
     
     func profileClickedAt(pos: Int) {
+        // navigate(to: .Profile(profile: profileAt(pos: pos)))
         view?.showProfile(profile: profileAt(pos: pos))
     }
 

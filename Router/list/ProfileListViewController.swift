@@ -15,7 +15,7 @@ class ProfileListViewController: UIViewController {
     //
     
     lazy var presenter: IProfileListPresenter = {
-       return ProfileListPresenter(view: self)
+       return ProfileListPresenter(view: self, router: Router())
     }()
     
     
