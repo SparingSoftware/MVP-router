@@ -45,7 +45,7 @@ class ProfileListPresenter: IProfileListPresenter {
 
     func myProfileClicked() {
         // more convenient than to use callback's
-        eventObserver.publish(type: .ShowMyProfileEvent)
+        eventObserver.publish(type: .ShowMyProfileEvent, extraData: nil)
     }
     
     //
