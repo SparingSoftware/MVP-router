@@ -10,11 +10,11 @@ import UIKit
 
 class AboutViewController: UIViewController {
 
-    
-    //
-    
     lazy var presenter: IAboutPresenter = {
-       return AboutPresenter(view: self, router: Router())
+       return AboutPresenter(
+            view: self,
+            router: AboutRouter(viewController: self)
+        )
     }()
     
     //
@@ -38,26 +38,13 @@ class AboutViewController: UIViewController {
     @IBAction func exitClicked(_ sender: Any) {
         presenter.exitClicked()
     }
-    
-    //
-    // Navigation
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //
-    }
 
 }
 
 //
 
 extension AboutViewController: IAboutView {
-    
-    func backToLogin() {
-        self.performSegue(withIdentifier: "BackToLogin", sender: self)
-    }
-    
-    func close() {
-        self.navigationController?.dismiss(animated: true, completion: nil)
-    }
+
+    //
     
 }

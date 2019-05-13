@@ -149,16 +149,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xYB-kE-sbL">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="188" width="414" height="625"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xrz-Wn-T6A">
+                                <rect key="frame" x="50" y="123" width="314" height="30"/>
+                                <color key="backgroundColor" red="0.050980392159999999" green="0.41960784309999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="MY PROFILE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="logInClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="43g-nR-MHk"/>
+                                    <action selector="myProfileClicked:" destination="2E9-Wk-Opz" eventType="touchUpInside" id="UEf-9E-GtQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="xYB-kE-sbL" firstAttribute="bottom" secondItem="Kft-Up-USX" secondAttribute="bottom" id="JqA-m7-fFC"/>
-                            <constraint firstItem="xYB-kE-sbL" firstAttribute="top" secondItem="Kft-Up-USX" secondAttribute="top" id="L1y-es-Uxu"/>
+                            <constraint firstItem="xYB-kE-sbL" firstAttribute="top" secondItem="Kft-Up-USX" secondAttribute="top" constant="100" id="L1y-es-Uxu"/>
                             <constraint firstItem="xYB-kE-sbL" firstAttribute="trailing" secondItem="Kft-Up-USX" secondAttribute="trailing" id="Qm8-9L-ene"/>
+                            <constraint firstItem="Xrz-Wn-T6A" firstAttribute="leading" secondItem="Kft-Up-USX" secondAttribute="leading" constant="50" id="XMB-qa-efu"/>
                             <constraint firstItem="xYB-kE-sbL" firstAttribute="leading" secondItem="Kft-Up-USX" secondAttribute="leading" id="XVi-6E-HG2"/>
+                            <constraint firstItem="Xrz-Wn-T6A" firstAttribute="top" secondItem="Kft-Up-USX" secondAttribute="top" constant="35" id="yEV-2d-EZw"/>
+                            <constraint firstItem="Kft-Up-USX" firstAttribute="trailing" secondItem="Xrz-Wn-T6A" secondAttribute="trailing" constant="50" id="yKC-h3-kXb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Kft-Up-USX"/>
                     </view>
@@ -257,6 +271,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="61W-3z-p2A"/>
+        <segue reference="SnY-iS-FD7"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -25,6 +25,12 @@
 		857BC75A22899BD900A53717 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857BC75922899BD900A53717 /* ProfileViewController.swift */; };
 		857BC75C22899BE300A53717 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857BC75B22899BE300A53717 /* ProfilePresenter.swift */; };
 		857BC75F2289C0F200A53717 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857BC75E2289C0F200A53717 /* Router.swift */; };
+		857BC7612289C40C00A53717 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857BC7602289C40C00A53717 /* LoginRouter.swift */; };
+		857BC7632289C9B900A53717 /* MainTabRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857BC7622289C9B900A53717 /* MainTabRouter.swift */; };
+		857BC7652289CA8900A53717 /* ProfileListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857BC7642289CA8900A53717 /* ProfileListRouter.swift */; };
+		857BC7672289CB1300A53717 /* AboutRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857BC7662289CB1300A53717 /* AboutRouter.swift */; };
+		857BC7692289D1C300A53717 /* IRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857BC7682289D1C300A53717 /* IRouter.swift */; };
+		857BC76C2289D3E200A53717 /* Observers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857BC76B2289D3E200A53717 /* Observers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +54,12 @@
 		857BC75922899BD900A53717 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		857BC75B22899BE300A53717 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
 		857BC75E2289C0F200A53717 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		857BC7602289C40C00A53717 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		857BC7622289C9B900A53717 /* MainTabRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabRouter.swift; sourceTree = "<group>"; };
+		857BC7642289CA8900A53717 /* ProfileListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileListRouter.swift; sourceTree = "<group>"; };
+		857BC7662289CB1300A53717 /* AboutRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutRouter.swift; sourceTree = "<group>"; };
+		857BC7682289D1C300A53717 /* IRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IRouter.swift; sourceTree = "<group>"; };
+		857BC76B2289D3E200A53717 /* Observers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +92,7 @@
 		857BC7292289840000A53717 /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				857BC76A2289D3D200A53717 /* observer */,
 				857BC74922898B7400A53717 /* model */,
 				857BC75D2289C0E700A53717 /* router */,
 				857BC74C228994A600A53717 /* about */,
@@ -99,6 +112,7 @@
 		857BC73C2289844900A53717 /* login */ = {
 			isa = PBXGroup;
 			children = (
+				857BC7602289C40C00A53717 /* LoginRouter.swift */,
 				857BC7412289850200A53717 /* LoginViewController.swift */,
 				857BC7432289851100A53717 /* LoginPresenter.swift */,
 			);
@@ -110,6 +124,7 @@
 			children = (
 				857BC74522898A1700A53717 /* MainTabViewController.swift */,
 				857BC74722898A2800A53717 /* MainPresenter.swift */,
+				857BC7622289C9B900A53717 /* MainTabRouter.swift */,
 			);
 			path = main;
 			sourceTree = "<group>";
@@ -121,6 +136,7 @@
 				857BC753228997D900A53717 /* ProfileListPresenter.swift */,
 				857BC7552289999000A53717 /* ProfileTableViewCell.swift */,
 				857BC7562289999000A53717 /* ProfileTableViewCell.xib */,
+				857BC7642289CA8900A53717 /* ProfileListRouter.swift */,
 			);
 			path = list;
 			sourceTree = "<group>";
@@ -147,6 +163,7 @@
 			children = (
 				857BC74D2289951F00A53717 /* AboutViewController.swift */,
 				857BC74F2289952B00A53717 /* AboutPresenter.swift */,
+				857BC7662289CB1300A53717 /* AboutRouter.swift */,
 			);
 			path = about;
 			sourceTree = "<group>";
@@ -155,8 +172,17 @@
 			isa = PBXGroup;
 			children = (
 				857BC75E2289C0F200A53717 /* Router.swift */,
+				857BC7682289D1C300A53717 /* IRouter.swift */,
 			);
 			path = router;
+			sourceTree = "<group>";
+		};
+		857BC76A2289D3D200A53717 /* observer */ = {
+			isa = PBXGroup;
+			children = (
+				857BC76B2289D3E200A53717 /* Observers.swift */,
+			);
+			path = observer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,17 +258,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				857BC74822898A2800A53717 /* MainPresenter.swift in Sources */,
+				857BC7652289CA8900A53717 /* ProfileListRouter.swift in Sources */,
 				857BC7442289851100A53717 /* LoginPresenter.swift in Sources */,
 				857BC7502289952B00A53717 /* AboutPresenter.swift in Sources */,
 				857BC7572289999000A53717 /* ProfileTableViewCell.swift in Sources */,
+				857BC7692289D1C300A53717 /* IRouter.swift in Sources */,
 				857BC74B22898B7E00A53717 /* User.swift in Sources */,
 				857BC74E2289951F00A53717 /* AboutViewController.swift in Sources */,
 				857BC75A22899BD900A53717 /* ProfileViewController.swift in Sources */,
 				857BC752228997BF00A53717 /* ProfileListViewController.swift in Sources */,
+				857BC7612289C40C00A53717 /* LoginRouter.swift in Sources */,
+				857BC7672289CB1300A53717 /* AboutRouter.swift in Sources */,
 				857BC754228997D900A53717 /* ProfileListPresenter.swift in Sources */,
 				857BC7422289850200A53717 /* LoginViewController.swift in Sources */,
+				857BC7632289C9B900A53717 /* MainTabRouter.swift in Sources */,
 				857BC75F2289C0F200A53717 /* Router.swift in Sources */,
 				857BC72B2289840000A53717 /* AppDelegate.swift in Sources */,
+				857BC76C2289D3E200A53717 /* Observers.swift in Sources */,
 				857BC74622898A1700A53717 /* MainTabViewController.swift in Sources */,
 				857BC75C22899BE300A53717 /* ProfilePresenter.swift in Sources */,
 			);

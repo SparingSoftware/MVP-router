@@ -12,19 +12,23 @@ import Foundation
 class MainPresenter: IMainPresenter {
     
     private weak var view: IMainView?
+    
     private var user: User?
     private var router: IRouter?
+    private var eventObserver: IEventObserver?
     
     //
     
     init(
         view: IMainView?,
         user: User?,
-        router: IRouter
+        router: IRouter,
+        eventObserver: IEventObserver
     ) {
         self.view = view
         self.user = user
         self.router = router
+        self.eventObserver = eventObserver
     }
     
     //
@@ -39,6 +43,12 @@ class MainPresenter: IMainPresenter {
         } else {
             view?.showTitle(title: "Hello Anonymous!")
         }
+        
+        bindObservers()
+    }
+    
+    deinit {
+        eventObserver?.dispose()
     }
     
     //
@@ -47,14 +57,22 @@ class MainPresenter: IMainPresenter {
     
     func logoutClicked() {
         router?.back(to: .Login)
-        view?.backToLogin()
     }
     
     func aboutClicked() {
         router?.navigate(to: .About)
-        view?.showAbout()
     }
     
+    
+    //
+    // Private
+    //
+    
+    private func bindObservers() {
+        eventObserver?.subscribe(type: .ShowMyProfileEvent) { [weak self] (data) in
+            self?.router?.navigate(to: .MyProfile)
+        }
+    }
 }
 
 
@@ -80,7 +98,5 @@ protocol IMainView: class {
     
     func setupViews()
     func showTitle(title: String)
-    func backToLogin()
-    func showAbout()
     
 }

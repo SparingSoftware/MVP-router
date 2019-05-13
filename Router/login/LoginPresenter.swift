@@ -42,12 +42,10 @@ class LoginPresenter: ILoginPresenter {
     
     func loginClicked() {
         router?.navigate(to: .Main(user: currentUser))
-        view?.showMainScreen(user: currentUser)
     }
     
     func skipClicked() {
         router?.navigate(to: .Main(user: nil))
-        view?.showMainScreen(user: nil)
     }
     
 }
@@ -73,6 +71,6 @@ protocol ILoginPresenter {
 
 protocol ILoginView: class {
 
-    func showMainScreen(user: User?)
+    //
     
 }

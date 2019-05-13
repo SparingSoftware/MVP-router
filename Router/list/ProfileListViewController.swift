@@ -14,8 +14,16 @@ class ProfileListViewController: UIViewController {
     
     //
     
+    lazy var router: IRouter = {
+       return ProfileListRouter(viewController: self)
+    }()
+    
     lazy var presenter: IProfileListPresenter = {
-       return ProfileListPresenter(view: self, router: Router())
+       return ProfileListPresenter(
+            view: self,
+            router: router,
+            eventObserver: EventObserver()
+        )
     }()
     
     
@@ -29,6 +37,21 @@ class ProfileListViewController: UIViewController {
         presenter.viewDidLoad()
     }
 
+    //
+    // Actions
+    //
+    
+    @IBAction func myProfileClicked(_ sender: Any) {
+        presenter.myProfileClicked()
+    }
+    
+    //
+    // Navigation
+    //
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        router.handleSegue(segue: segue)
+    }
     
 }
 
@@ -38,16 +61,6 @@ extension ProfileListViewController: IProfileListView {
     
     func setupViews() {
         setupTableView()
-    }
-    
-    func showProfile(profile: User) {
-        // use storyboard init
-        // it is easier here because we don't have to store properties to show in segue
-        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-        if let vc = storyboard.instantiateViewController(withIdentifier: "ProfileVc") as? ProfileViewController {
-            vc.user = profile
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
     }
  
 }

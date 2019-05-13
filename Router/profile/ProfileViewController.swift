@@ -22,7 +22,10 @@ class ProfileViewController: UIViewController {
     //
     
     lazy var presenter: IProfilePresenter = {
-        return ProfilePresenter(view: self, user: user)
+        return ProfilePresenter(
+            view: self,
+            user: user
+        )
     }()
     
     
@@ -35,15 +38,6 @@ class ProfileViewController: UIViewController {
 
         presenter.viewDidLoad()
     }
-    
-    //
-    // Navigation
-    //
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //
-    }
-
 }
 
 //

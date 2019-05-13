@@ -10,14 +10,17 @@ import UIKit
 
 class MainTabViewController: UITabBarController {
     
-    // not-optional
     var loggedUser: User?
-    
     
     //
     
     lazy var presenter: IMainPresenter =  {
-        return MainPresenter(view: self, user: loggedUser, router: Router())
+        return MainPresenter(
+            view: self,
+            user: loggedUser,
+            router: MainTabRouter(viewController: self),
+            eventObserver: EventObserver()
+        )
     }()
     
     //
@@ -30,24 +33,16 @@ class MainTabViewController: UITabBarController {
         presenter.viewDidLoad()
     }
     
+    //
+    // Actions
+    //
+    
     @IBAction func exitClicked(_ sender: Any) {
         presenter.logoutClicked()
     }
     
     @IBAction func aboutClicked(_ sender: Any) {
         presenter.aboutClicked()
-    }
-    
-    //
-
-    //
-    // Navigation
-    //
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
 
 }
@@ -58,14 +53,6 @@ extension MainTabViewController: IMainView {
     
     func showTitle(title: String) {
         self.navigationItem.title = title
-    }
-    
-    func backToLogin() {
-        self.navigationController?.dismiss(animated: true, completion: nil)
-    }
-    
-    func showAbout() {
-        self.performSegue(withIdentifier: "ShowAbout", sender: self)
     }
     
     func setupViews() {

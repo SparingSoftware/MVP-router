@@ -10,10 +10,8 @@ import Foundation
 
 class ProfilePresenter: IProfilePresenter {
 
-    
-    //
-    
     private weak var view: IProfileView?
+    
     private var user: User?
     
     //
@@ -41,14 +39,7 @@ class ProfilePresenter: IProfilePresenter {
         
     }
     
-    //
-    // Actions
-    //
-    
-
-    
 }
-
 
 
 //
@@ -60,8 +51,6 @@ protocol IProfilePresenter {
     func viewDidLoad()
     
     //
-
-    
     
 }
 

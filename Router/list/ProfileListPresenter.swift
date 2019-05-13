@@ -11,16 +11,20 @@ import Foundation
 class ProfileListPresenter: IProfileListPresenter {
     
     private weak var view: IProfileListView?
+    
     private var router: IRouter?
+    private var eventObserver: IEventObserver
     
     //
     
     init(
         view: IProfileListView?,
-        router: IRouter
+        router: IRouter,
+        eventObserver: IEventObserver
     ) {
         self.view = view
         self.router = router
+        self.eventObserver = eventObserver
     }
     
     //
@@ -37,9 +41,13 @@ class ProfileListPresenter: IProfileListPresenter {
     
     func profileClickedAt(pos: Int) {
         router?.navigate(to: .Profile(user: profileAt(pos: pos)))
-        view?.showProfile(profile: profileAt(pos: pos))
     }
 
+    func myProfileClicked() {
+        // more convenient than to use callback's
+        eventObserver.publish(type: .ShowMyProfileEvent)
+    }
+    
     //
     // Data
     //
@@ -75,6 +83,7 @@ protocol IProfileListPresenter {
     func profileAt(pos: Int) -> User
     
     func profileClickedAt(pos: Int)
+    func myProfileClicked()
     
     
 }
@@ -84,6 +93,5 @@ protocol IProfileListPresenter {
 protocol IProfileListView: class {
 
     func setupViews()
-    func showProfile(profile: User)
     
 }

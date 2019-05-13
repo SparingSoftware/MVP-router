@@ -11,7 +11,10 @@ import UIKit
 class LoginViewController: UIViewController {
 
     private lazy var presenter: ILoginPresenter =  { [weak self] in
-        return LoginPresenter(view: self, router: Router())
+        return LoginPresenter(
+            view: self,
+            router: LoginRouter(viewController: self)
+        )
     }()
     
     //
@@ -40,10 +43,6 @@ class LoginViewController: UIViewController {
     // Navigation
     //
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //
-    }
-    
     // back to this screen
     @IBAction func unwindToLogin(segue: UIStoryboardSegue) { }
 
@@ -52,15 +51,6 @@ class LoginViewController: UIViewController {
 // ILoginView
 extension LoginViewController: ILoginView {
     
-    func showMainScreen(user: User?) {
-        // use storyboard init
-        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-        if let nav = storyboard.instantiateViewController(withIdentifier: "MainTabNav") as? UINavigationController {
-            if let vc = nav.children.first as? MainTabViewController {
-                vc.loggedUser = user
-                self.present(nav, animated: true, completion: nil)
-            }
-        }
-    }
+    //
     
 }
