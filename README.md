@@ -8,7 +8,6 @@ On branch [router-simple](https://github.com/SparingSoftware/MVP-router/tree/sim
 - Deeplinks
 - One router instead of multiple (for each screen)
 
-
 ---
 
 ### How it works
