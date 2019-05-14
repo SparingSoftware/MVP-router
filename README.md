@@ -24,7 +24,7 @@ func loginClicked() {
 func showMainScreen(user: User?) {
 	// use storyboard init
 	let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-	if let nav = storyboard.instantiateViewController(withIdentifier: "MainTabNav") as? 	UINavigationController {
+	if let nav = storyboard.instantiateViewController(withIdentifier: "MainTabNav") as? UINavigationController {
 		if let vc = nav.children.first as? MainTabViewController {
 			vc.loggedUser = user
 			self.present(nav, animated: true, completion: nil)
@@ -42,13 +42,8 @@ class LoginRouter: IRouter {
     func navigate(to destination: Destination) {
         switch destination {
         case .Main(let user):
-            let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-            if let nav = storyboard.instantiateViewController(withIdentifier: "MainTabNav") as? UINavigationController {
-                if let vc = nav.children.first as? MainTabViewController {
-                    vc.loggedUser = user
-                    viewController?.present(nav, animated: true, completion: nil)
-                }
-            }
+            // ...
+	    // viewController?.present(nav, animated: true, completion: nil)
         break
             
         default: break
