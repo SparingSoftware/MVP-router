@@ -8,6 +8,7 @@ On branch [router-simple](https://github.com/SparingSoftware/MVP-router/tree/sim
 - Deeplinks
 - One router instead of multiple (for each screen)
 
+
 ---
 
 ### How it works
@@ -35,17 +36,15 @@ func showMainScreen(user: User?) {
 With Router we move navigation method to seperate module:
 ```swift
 class LoginRouter: IRouter {
-
 	// ...
-
 	func navigate(to destination: Destination) {
 		switch destination {
-		case .Main(let user):
-		// ...
-		// viewController?.present(nav, animated: true, completion: nil)
-		break
+			case .Main(let user):
+			// ...
+			// viewController?.present(nav, animated: true, completion: nil)
+			break
 
-		default: break
+			default: break
 		}
 	}
 }
@@ -54,5 +53,14 @@ And a call is as simple as:
 ```swift
 func loginClicked() {
 	router?.navigate(to: .Main(user: currentUser))
+}
+```
+
+### Tests
+You can easily test your Logic with router:
+```swift
+func test_login() {
+	presenter.loginClicked()
+	verify(router).navigate(to: equalDestination(to: .Main(user: User(name: "Piotr"))))
 }
 ```
