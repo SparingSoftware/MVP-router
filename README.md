@@ -64,4 +64,3 @@ func test_login() {
 	verify(router).navigate(to: equalDestination(to: .Main(user: User(name: "Piotr"))))
 }
 ```
-
