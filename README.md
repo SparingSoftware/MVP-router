@@ -14,12 +14,12 @@ On branch [router-simple](https://github.com/SparingSoftware/MVP-router/tree/sim
 
 In standard approach Presenter (or view itself) will call method to navigate:
 **In Presener / View:**
-```
+```swift
 func loginClicked() {
 	view?.showMainScreen(user: User(name: "Piotr"))
 }
 ```
-```
+```swift
 func showMainScreen(user: User?) {
 	// use storyboard init
 	let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
@@ -33,7 +33,7 @@ func showMainScreen(user: User?) {
 ```
 
 With Router we move navigation method to seperate module:
-```
+```swift
 class LoginRouter: IRouter {
 
 	// ...
@@ -51,7 +51,7 @@ class LoginRouter: IRouter {
 }
 ```
 And a call is as simple as:
-```
+```swift
 func loginClicked() {
 	router?.navigate(to: .Main(user: currentUser))
 }
