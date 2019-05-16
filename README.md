@@ -37,17 +37,17 @@ With Router we move navigation method to seperate module:
 class LoginRouter: IRouter {
 
 	// ...
-	
-    func navigate(to destination: Destination) {
-        switch destination {
-        case .Main(let user):
-            // ...
-	    // viewController?.present(nav, animated: true, completion: nil)
-        break
-            
-        default: break
-        }
-    }
+
+	func navigate(to destination: Destination) {
+		switch destination {
+		case .Main(let user):
+		// ...
+		// viewController?.present(nav, animated: true, completion: nil)
+		break
+
+		default: break
+		}
+	}
 }
 ```
 And a call is as simple as:
